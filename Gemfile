@@ -11,9 +11,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# omniauth and its gems
+gem 'omniauth'
+gem 'omniauth-openid'
+
 # using sqlite3 in development for now because pgsql is a pain to configure
 group :development do
   gem 'sqlite3'
+  gem 'debugger'
 end
 
 # Use pgsql in production; it's what's used on Heroku
@@ -27,4 +32,5 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'thin'
 gem 'hominid'
+
 

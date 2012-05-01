@@ -1,4 +1,4 @@
-= form_for @eos_feature, :url => { :action => :update } do |form|
+= form_for @eos_feature, :url => { :action => :create } do |form|
   Title
   = form.text_field :title
   %br
@@ -14,4 +14,5 @@
   = form.file_field :podcast
   %br
   = form.submit :value => "Save"
+
 

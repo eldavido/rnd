@@ -1,4 +1,6 @@
 class EngineersOnstageController < ApplicationController
+  before_filter :user_is_editor, :except => [:index, :show]
+
   def index
     @features = EosFeature.all
   end
@@ -8,6 +10,20 @@ class EngineersOnstageController < ApplicationController
 
     respond_to do |format|
       format.html
+    end
+  end
+
+  def new
+    @eos_feature = EosFeature.new
+  end
+
+  def create
+    @eos_feature = EosFeature.new(params[:eos_feature])
+
+    if @eos_feature.save
+      redirect_to '/'
+    else
+      render :edit
     end
   end
 

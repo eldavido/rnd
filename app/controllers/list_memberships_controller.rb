@@ -1,6 +1,5 @@
 require 'hominid'
 
-
 #ListMembershipsController
 class ListMembershipsController < ApplicationController
   def create

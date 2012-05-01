@@ -1,6 +1,6 @@
 Rnd::Application.routes.draw do
   match '/'                   => 'home#index'
-
+  match '/auth/:provider/callback', to: 'sessions#create'
   match '/list_memberships'   => 'list_memberships#create'
 
   # Static pages
@@ -15,3 +15,4 @@ Rnd::Application.routes.draw do
 
   resources :engineers_onstage
 end
+
