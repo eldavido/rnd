@@ -1,4 +1,7 @@
-= form_for @eos_feature, :url => { :action => :update } do |form|
+- content_for :title do
+  edit feature : engineers onstage : rnd.io
+
+= form_for @eos_feature, :url => { :action => if @eos_feature.id then :update else :create end } do |form|
   Title
   = form.text_field :title
   %br
@@ -8,10 +11,15 @@
   Overview
   = form.text_field :overview, :size => 50
   %br
+  Body
+  %br
+  = form.text_area :body, :size => "80x25"
+  %br
   Leader Picture
   = form.file_field :leader_picture
   Podcast
   = form.file_field :podcast
   %br
   = form.submit :value => "Save"
+
 

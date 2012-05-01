@@ -1,3 +1,6 @@
+- content_for :title do
+  = @feature.title + " : engineers onstage : rnd.io"
+
 .span.leader
   = @feature.content_date.strftime("%B %d, %Y")
   %h1
@@ -22,7 +25,9 @@
       = @feature.title
 %br
 
-= @feature.body
+%h2
+  Transcript
+= raw @feature.body
 
 %hr
 #disqus_thread
