@@ -1,11 +1,10 @@
 !!! 5
 %html
   %head
-    %title
-      = yield :title
+    %title= yield :title
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    = javascript_include_tag "http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f9baabf1cafa2d6"
+    = yield :partial_scripts
     = csrf_meta_tags
   %body
     .container

@@ -81,6 +81,16 @@ a.selected {
   color: white;
 }
 
+.content .under_fold {
+  display: none;
+}
+
+.content .unfold {
+  color: white;
+  font-weight: bold;
+}
+
+
 #carousel {
   margin: auto;
 }
