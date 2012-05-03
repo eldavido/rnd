@@ -1,4 +1,5 @@
-var disqus_shortname = 'rndio';
+$(document).ready(function() {
+  var disqus_shortname = 'rndio';
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -27,8 +28,7 @@ var disqus_shortname = 'rndio';
     animTransition: Animator.tx.bouncy// http://www.berniecode.com/writing/animator.html
   }
 
-// "Unfold" reveals content beneath the fold
-$(document).ready(function() {
+  // "Unfold" reveals content beneath the fold
   $('.unfold').click(function(event) {
     $('.under_fold').show();
     $(this).hide();
