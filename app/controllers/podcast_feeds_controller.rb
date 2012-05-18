@@ -2,7 +2,7 @@
 
 class PodcastFeedsController < ApplicationController
   def engineers_onstage
-    @features = EosFeature.find(:all, :order => 'content_date DESC', :limit => 10)
+    @features = EosFeature.podcast_feed_features
     
     respond_to do |format|
       format.xml

@@ -11,5 +11,9 @@ class Feature < ActiveRecord::Base
   def create_slug
     self.slug = "#{self.content_date.strftime('%Y%m%d')} #{self.title}".parameterize
   end
+
+  def self.home_page_features
+    find(:all, :order => 'content_date DESC', :limit => 10)
+  end
 end
 
