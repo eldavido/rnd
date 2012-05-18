@@ -1,5 +1,6 @@
 # Represents a piece of content on rnd.io
 class Feature < ActiveRecord::Base
+  scope :published, :conditions => { :published => true }
   before_save :create_slug
 
   has_attached_file :leader_picture,
@@ -13,7 +14,7 @@ class Feature < ActiveRecord::Base
   end
 
   def self.home_page_features
-    find(:all, :order => 'content_date DESC', :limit => 10)
+    published.find(:all, :order => 'content_date DESC', :limit => 10)
   end
 end
 

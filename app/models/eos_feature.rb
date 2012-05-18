@@ -6,7 +6,7 @@ class EosFeature < Feature
     :path => "/features/audio/:style/:id/:filename"
 
   def self.podcast_feed_features
-    find(:all, :order => 'content_date DESC', :limit => 10)
+    published.find(:all, :order => 'content_date DESC', :limit => 10)
   end
 end
 
