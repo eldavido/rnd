@@ -1,7 +1,7 @@
 class AddPublishedFlagToFeature < ActiveRecord::Migration
   def change
     # Features aren't published by default
-    add_column :features, :published, :boolean, :default => 0
+    add_column :features, :published, :boolean, :default => false
 
     # Mark all previously existing features as published
     Feature.all.each do |f|
