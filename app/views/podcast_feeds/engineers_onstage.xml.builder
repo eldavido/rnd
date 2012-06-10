@@ -8,8 +8,8 @@ xml.rss 'xmlns:itunes' => "http://www.itunes.com/dtds/podcast-1.0.dtd", :version
     xml.language    'en-us'
     xml.copyright   '&copy; 2012 Prefiat LLC'
     xml.itunes      :subtitle, "An insider's view into the educations, careers, and lives of the world's most influential scientists and engineers, brought to you by rnd.io"
-    xml.itunes      :author, "Ravi Sathyam and David Albrecht"
-    xml.itunes      :summary, "Biweekly interviews with today's leading minds in science and technology"
+    xml.itunes      :author, "rnd.io"
+    xml.itunes      :summary, "Have you ever wondered what it's like to work at Facebook, Apple, Google, or Microsoft? Maybe you work in a creative field, but wonder how software gets made? Every two weeks, Ravi and David interview a world-class expert on their work and their passions. In the past, we've discussed the difficulty of synchronizing clocks in train stations, strategies for squeezing every drop of power from a mobile handset's battery, and a four-year rags-to-riches journey spanning two failed startups and a move across the country."
     xml.description "Have you ever wondered what it's like to work at Facebook, Apple, Google, or Microsoft? Maybe you work in a creative field, but wonder how software gets made? Every two weeks, Ravi and David interview a world-class expert on their work and their passions. In the past, we've discussed the difficulty of synchronizing clocks in train stations, strategies for squeezing every drop of power from a mobile handset's battery, and a four-year rags-to-riches journey spanning two failed startups and a move across the country."
 
     xml.itunes :owner do
