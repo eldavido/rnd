@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518193429) do
+ActiveRecord::Schema.define(:version => 20120610063839) do
 
   create_table "features", :force => true do |t|
     t.string   "title"
@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(:version => 20120518193429) do
     t.string   "type"
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
-    t.string   "audio_file"
-    t.string   "audio_mime"
-    t.integer  "audio_bytes"
-    t.integer  "audio_seconds"
     t.string   "feature_keywords"
     t.string   "slug"
     t.string   "leader_picture_file_name"
