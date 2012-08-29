@@ -14,7 +14,7 @@ class Feature < ActiveRecord::Base
   end
 
   def self.home_page_features
-    published.find(:all, :order => 'content_date DESC', :limit => 10)
+    published.find(:all, :order => 'content_date DESC', :limit => 5)
   end
 end
 

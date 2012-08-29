@@ -15,8 +15,8 @@
           - ct = controller.controller_name
           - action = controller.action_name
           %li
-            = link_to 'engineers onstage', { controller: 'home', action: 'index' },
-              class: ct == 'home' ? 'selected' : ''
+            = link_to 'engineers onstage', { controller: 'engineers_onstage', action: 'index' },
+              class: (ct == 'engineers_onstage' and action == 'index') ? 'selected' : ''
           %li
             = link_to 'subscribe', { controller: 'statics', action: 'subscribe' },
               class: (ct == 'statics' and action == 'subscribe') ? 'selected' : ''

@@ -1,0 +1,19 @@
+- content_for :title do
+  engineers onstage : rnd.io
+
+%h1 Engineers Onstage
+%p
+  A biweekly series exploring the careers of engineers in the Bay Area and beyond. Available on the web,
+  -#via
+  -#%a{href: 'rss'}RSS,
+  or as a 
+  %a{href: 'http://itunes.apple.com/ua/podcast/engineers-onstage/id534963702'}podcast.
+
+- @features.each do |f|
+  %a{href: url_for(controller: 'engineers_onstage', action: 'show', id: f.id)}
+    %h2= f.content_date.strftime("%B %d, %Y") + ': ' + f.title
+  %p.feature_summary
+    %a{href: url_for(controller: 'engineers_onstage', action: 'show', id: f.id)}
+      %img{src: f.leader_picture, width: 132, height: 88}
+    = f.overview
+

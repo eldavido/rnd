@@ -69,6 +69,10 @@ a.selected {
   color: rgb(8, 37, 80);
 }
 
+.content a {
+  color: white;
+}
+
 .content h1 {
   color: white;
 }
@@ -88,6 +92,17 @@ a.selected {
 .content .unfold {
   color: white;
   font-weight: bold;
+}
+
+.feature_summary {
+  clear: both;
+  display: table;
+}
+
+.feature_summary img {
+  position: relative;
+  float: left;
+  padding-right: 1em;
 }
 
 
