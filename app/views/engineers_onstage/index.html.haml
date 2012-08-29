@@ -10,10 +10,10 @@
   %a{href: 'http://itunes.apple.com/ua/podcast/engineers-onstage/id534963702'}podcast.
 
 - @features.each do |f|
-  %a{href: url_for(controller: 'engineers_onstage', action: 'show', id: f.id)}
+  %a{href: url_for(controller: 'engineers_onstage', action: 'show', id: f.slug)}
     %h2= f.content_date.strftime("%B %d, %Y") + ': ' + f.title
   %p.feature_summary
-    %a{href: url_for(controller: 'engineers_onstage', action: 'show', id: f.id)}
+    %a{href: url_for(controller: 'engineers_onstage', action: 'show', id: f.slug)}
       %img{src: f.leader_picture, width: 132, height: 88}
     = f.overview
 
