@@ -8,5 +8,9 @@ class EosFeature < Feature
   def self.podcast_feed_features
     published.find(:all, :order => 'content_date DESC', :limit => 10)
   end
+
+  def self.index_features
+    published.find(:all, :order => 'content_date DESC')
+  end
 end
 

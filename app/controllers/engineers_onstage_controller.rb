@@ -3,7 +3,7 @@ class EngineersOnstageController < ApplicationController
   caches_action :index, :show, :new
 
   def index
-    @features = EosFeature.find(:all, :order => 'content_date DESC')
+    @features = EosFeature.index_features
 
     respond_to do |format|
       format.html
