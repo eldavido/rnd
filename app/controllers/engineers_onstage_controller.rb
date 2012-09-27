@@ -1,6 +1,6 @@
 class EngineersOnstageController < ApplicationController
   before_filter :user_is_editor, :except => [:index, :show]
-  caches_action :index, :show, :new
+  caches_action :index, :show
 
   def index
     @features = EosFeature.index_features
@@ -29,9 +29,7 @@ class EngineersOnstageController < ApplicationController
     @eos_feature = EosFeature.new(params[:eos_feature])
 
     if @eos_feature.save
-      expire_action :action => :index
-      expire_action :action => :show, :id => @eos_feature.id
-      expire_action :controller => :home, :action => :index
+      invalidate_caches
 
       redirect_to '/'
     else
@@ -51,13 +49,18 @@ class EngineersOnstageController < ApplicationController
     @eos_feature = EosFeature.find_by_slug(params[:id]) || EosFeature.find(params[:id])
 
     if @eos_feature.update_attributes(params[:eos_feature])
-      expire_action :action => :index
-      expire_action :action => :show, :id => @eos_feature.id
-      expire_action :controller => :home, :action => :index
+      invalidate_caches
 
       redirect_to :action => :show, :id => @eos_feature.slug
     else
       render :eos_feature_form
     end
+  end
+
+  protected
+  def invalidate_caches
+    expire_action :controller => :engineers_onstage, :action => :index
+    expire_action :controller => :engineers_onstage, :action => :show, :id => @eos_feature.id
+    expire_action :controller => :home, :action => :index
   end
 end
