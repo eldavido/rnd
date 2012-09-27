@@ -31,6 +31,7 @@ class EngineersOnstageController < ApplicationController
     if @eos_feature.save
       expire_action :action => :index
       expire_action :action => :show, :id => @eos_feature.id
+      expire_action :controller => :home, :action => :index
 
       redirect_to '/'
     else
@@ -52,6 +53,7 @@ class EngineersOnstageController < ApplicationController
     if @eos_feature.update_attributes(params[:eos_feature])
       expire_action :action => :index
       expire_action :action => :show, :id => @eos_feature.id
+      expire_action :controller => :home, :action => :index
 
       redirect_to :action => :show, :id => @eos_feature.slug
     else
