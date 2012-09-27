@@ -29,8 +29,8 @@ class EngineersOnstageController < ApplicationController
     @eos_feature = EosFeature.new(params[:eos_feature])
 
     if @eos_feature.save
-      expire_action :index
-      expire_action :show, :id => @eos_feature.id
+      expire_action :action => :index
+      expire_action :action => :show, :id => @eos_feature.id
 
       redirect_to '/'
     else
@@ -50,8 +50,8 @@ class EngineersOnstageController < ApplicationController
     @eos_feature = EosFeature.find_by_slug(params[:id]) || EosFeature.find(params[:id])
 
     if @eos_feature.update_attributes(params[:eos_feature])
-      expire_action :index
-      expire_action :show, :id => @eos_feature.id
+      expire_action :action => :index
+      expire_action :action => :show, :id => @eos_feature.id
 
       redirect_to :action => :show, :id => @eos_feature.slug
     else
